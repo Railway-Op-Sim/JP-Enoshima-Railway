@@ -25,7 +25,7 @@ the close proximity to streets means there are many level crossings crossing the
 ## Simulation
 
 The simulation depicts the full 10km route and contains a single timetable representing a typical week day operation of the line.
-Initially all rolling stock is stabled either at *Enoshima Sidings* or *Gokurakuji Depot*,
+Initially all rolling stock is stabled either at *Enoshima Sidings* or *Gokurakuji Depot*.
 
 ### Tips
 
