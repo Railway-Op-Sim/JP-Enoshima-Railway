@@ -12,8 +12,8 @@ The Enoshima Electric Railway is a private railway running along the south coast
 | Naming | <img src="https://image.flaticon.com/icons/svg/1632/1632596.svg" height="24">      |
 | Speed Limits | <img src="https://image.flaticon.com/icons/svg/1632/1632596.svg" height="24"> |
 | Distances | <img src="https://image.flaticon.com/icons/svg/1632/1632596.svg" height="24"> |
-| Timetable | <img src="https://image.flaticon.com/icons/svg/1828/1828833.svg" height="24"> |
-| Documentation | <img src="https://image.flaticon.com/icons/svg/390/390914.svg" height="24"> |
+| Timetable | <img src="https://image.flaticon.com/icons/svg/1632/1632596.svg" height="24"> |
+| Documentation | <img src="https://image.flaticon.com/icons/svg/1632/1632596.svg" height="24"> |
 
 
 ## Data Sources

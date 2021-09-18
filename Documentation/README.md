@@ -1,26 +1,34 @@
-# Project Title
+# Enoshima Electric Railway
 
-*About the project goes here*
+The Enoshima Electric railway is a railway line privately operated by the Odakyu Group, running 10km from Kamakura to Kujisawa in Japan.
+The line is mainly single track with passing loops at five of the fifteen stations, and in places runs along the streets of the area, as such
+the close proximity to streets means there are many level crossings crossing the route.
 
-You could include:
-- Some history to the route.
-- What stations are included?
-- The type of services the route has. (Freight/Passenger)
+## Stations
+
+- Fujisawa
+- Ishigami
+- Yanagikoji
+- Kugenuma
+- Shōnankaigankōen
+- Enoshima
+- Koshigoe
+- Kamakura-Kōkō-Mae
+- Shichirigahama
+- Inamuragasaki
+- Gokurakuji
+- Hase
+- Yuigahama
+- Wadazuka
+- Kamakura
 
 ## Simulation
 
-*This section describes the timetable*
+The simulation depicts the full 10km route and contains a single timetable representing a typical week day operation of the line.
+Initially all rolling stock is stabled either at *Enoshima Sidings* or *Gokurakuji Depot*,
 
-You could include:
-- Where services go to and from.
-- How frequent the services are.
-- Any tips for operating the route.
+### Tips
 
-## Development
-
-*This section is optional though highly recommended*
-
-If your route is open to contribution on the ROS GitHub, then it may be a good idea to:
-- Include a link to your project on GitHub.
-- Include any information about what could be built upon in this route.
-- Tell the reader where they can go to get help if they want to contribute.
+- Pay close attention to the service the empty stock is scheduled to form to ensure you direct them to the correct start station.
+- There is a level of skill in ensuring level crossings are not left open longer than they need to be, this will require practice.
+- Due to limitations in ROS distance setting there is a high chance services will run late between certain stations, the speed limit has been set higher than reality to try to reduce the effect of this.
