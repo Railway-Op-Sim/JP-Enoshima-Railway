@@ -54,16 +54,22 @@ jobs:
       - name: Run MR Merge Script
         run: git_merge_ttb dev --soft --ttb-path Program_Timetables
         if: ${{ github.event_name == 'pull_request'}}
+        
+      - name: Check merge occured
+        shell: bash
+        run: echo "##[set-output name=exists;]$(if [ -d "mr_check_output" ]; then echo 'yes'; else echo 'no'; fi)"
+        id: check_merge
 
       - uses: actions/upload-artifact@v1
         with:
           name: merge_test_results
           path: mr_check_output
+        if: ${{ steps.check_merge.outputs.exists }} == 'yes'
 
       - uses: actions/download-artifact@v1
         with:
           name: merge_test_results
-        if: ${{ github.event_name == 'pull_request'}}
+        if: ${{ github.event_name == 'pull_request'}} && ${{ steps.check_merge.outputs.exists }} == 'yes'
           
       - name: Comment Pull Request with Result
         uses: machine-learning-apps/pr-comment@master
@@ -71,25 +77,29 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           path: merge_test_results/mr-result.md
-        if: ${{ github.event_name == 'pull_request'}}
+        if: ${{ github.event_name == 'pull_request'}} && ${{ steps.check_merge.outputs.exists }} == 'yes'
 
       - name: Download Timetable Checker
         run: git clone https://github.com/Railway-Op-Sim/CI-Development.git
+        if: ${{ steps.check_merge.outputs.exists }} == 'yes'
         
       - name: Check Contents
         run: |
             pwd
             ls CI-Development/software
+        if: ${{ steps.check_merge.outputs.exists }} == 'yes'
         
       - uses: actions/upload-artifact@v1
         with:
             name: ttb_checker_exe_archive
             path: CI-Development/software/TimetableChecker.zip
+        if: ${{ steps.check_merge.outputs.exists }} == 'yes'
       
       - uses: actions/upload-artifact@v1
         with:
             name: ttb_check_python_parser
             path: CI-Development/scripts/ttb_check.py
+        if: ${{ steps.check_merge.outputs.exists }} == 'yes'
 
   run_timetable_check:
     needs: ci-test
