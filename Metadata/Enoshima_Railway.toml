@@ -1,0 +1,7 @@
+rly_file = "Enoshima_Railway.rly"
+ttb_files = [ "Enoshima_Week_2021.ttb",]
+ssn_files = []
+country_code = "JP"
+name = ""
+description = ""
+display_name = "Enoshima Railway"

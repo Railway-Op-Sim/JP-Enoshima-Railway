@@ -25,7 +25,7 @@ jobs:
 
       - name: Create/Update File
         run: |
-            metabuild $GITHUB_WORKSPACE --repo-name $GITHUB_REPOSITORY --author "${{ steps.extract_author.outputs.author }}"
+            metabuild "$GITHUB_WORKSPACE" --repo-name "$GITHUB_REPOSITORY" --author "${{ steps.extract_author.outputs.author }}" --debug
       
       - name: Commit to git
         run: |
