@@ -8,6 +8,7 @@ jobs:
     container:
       image: artemisbeta/railwayopsim-ci:latest
       env:
+        AUTHOR_NAME: Krizar
         DEBIAN_FRONTEND : noninteractive
         LANG : 'en_GB.UTF-8' 
         LANGUAGE : 'en_GB:en' 
@@ -25,7 +26,7 @@ jobs:
 
       - name: Create/Update File
         run: |
-            metabuild "$GITHUB_WORKSPACE" --repo-name "$GITHUB_REPOSITORY" --author "${{ steps.extract_author.outputs.author }}" --debug
+            metabuild "$GITHUB_WORKSPACE" --repo-name "$GITHUB_REPOSITORY" --debug
       
       - name: Commit to git
         run: |
